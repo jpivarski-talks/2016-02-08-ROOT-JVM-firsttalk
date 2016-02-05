@@ -90,7 +90,7 @@ Links Java to shared libraries through standard FFI.
 \end{frame}
 
 \begin{frame}{ScaROOT}
-\framesubtitle{Scala ROOT: not Scary!}
+\framesubtitle{Scala ROOT, not Scary ROOT!}
 
 Started test implementation in the DIANA-HEP GitHub site.
 
@@ -99,7 +99,16 @@ Started test implementation in the DIANA-HEP GitHub site.
 
 \vspace{0.2 cm}
 \begin{itemize}
-\item Tried 
+\item Tried JNI (unsuccessfully) and JNA (successfully).
+\item Set up a clean build environment in Maven and Make:
+\begin{itemize}
+\item {\tt maven clean} deletes {\tt scaroot.so} file.
+\item {\tt maven package} runs {\tt make} to build C++ first, then Scala (and any Java, if needed).
+\item C-style symbol names ({\tt extern "C"}) in shared object.
+\item Assembly puts {\tt scaroot.so} inside {\tt scaroot.jar} for self-sufficienct deployment.
+
+User doesn't need to know about {\tt scaroot.so}, but {\tt LD\_LIBRARY\_PATH} must point to ROOT shared objects.
+\end{itemize}
 
 
 
