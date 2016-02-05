@@ -37,18 +37,20 @@ Most of the big data-pipeline frameworks used in industry run on the Java Virtua
 In particular, Apache Spark is written in Scala.
 \begin{itemize}
 \item Scala is a JVM language (essentially interchangeable with Java, but more friendly for data analysis).
-\item Spark supports analyses in Scala, Java, Python through sockets (Py4J), and R through pipes (stdin/stdout), {\it and not C/C++.}
-
+\item Spark supports analyses in Scala, Java, Python through sockets (Py4J), and R through pipes (stdin/stdout).
+\item No support for natively compiled (C/C++) code, including ROOT.
+\item Sockets and pipes both introduce serialization and transmission overhead.
 \end{itemize}
 \end{block}
 
+\begin{block}{}
+Similar motivation as for PyROOT: the JVM is a platform that is increasingly being used for data analysis.
 
-
-
-
-No, the RIO reimplementation in JAS doesn't seem to exist anymore\ldots
-
-Similar to motivation for PyROOT; JVM is another platform that's starting to get a lot of analysis tools (Hadoop, Spark, and many others, mostly Apache stuff related to Big Data)
+We need an efficient and robust bridge.
+\end{block}
 \end{frame}
+
+%% No, the RIO reimplementation in JAS doesn't seem to exist anymore\ldots
+
 
 \end{document}
