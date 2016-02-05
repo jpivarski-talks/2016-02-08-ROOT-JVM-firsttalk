@@ -89,15 +89,12 @@ Links Java to shared libraries through standard FFI.
 \end{block}
 \end{frame}
 
-\begin{frame}{ScaROOT (Scala ROOT, not Scary ROOT!)}
-Started test implementation in the DIANA-HEP GitHub site.
-
-\vspace{0.2 cm}
+\begin{frame}{ScaROOT {\small (Scala ROOT, not Scary ROOT!)}}
 \includegraphics[width=\linewidth]{scaroot_languages.png}
 
 \vspace{0.2 cm}
 \begin{itemize}
-\item Tried JNI (unsuccessfully) and JNA (successfully).
+\item Tested JNI (unsuccessfully) and JNA (successfully).
 \item Set up a clean build environment in Maven and Make:
 \begin{itemize}
 \item {\tt maven clean} deletes {\tt scaroot.so} file.
@@ -106,7 +103,7 @@ Started test implementation in the DIANA-HEP GitHub site.
 \item Assembly puts {\tt scaroot.so} inside {\tt scaroot.jar} for self-sufficienct deployment.
 \item User doesn't need to know about {\tt scaroot.so}, but {\tt LD\_LIBRARY\_PATH} must point to ROOT shared objects.
 \end{itemize}
-\item Package namespace {\tt org.dianahep} with GroupID {\tt org.diana-hep}.
+\item Namespace {\tt org.dianahep}, GroupID {\tt org.diana-hep}.
 \end{itemize}
 \end{frame}
 
