@@ -57,20 +57,26 @@ We need an efficient and robust bridge.
 
 \begin{frame}{Technologies}
 
-\begin{block}{}
+\begin{block}{FreeHEP-ROOTIO}
 Pure-Java reimplementation of ROOT I/O \mbox{on \url{java.freehep.org}.\hspace{-1 cm}}
 \begin{itemize}
-\item Hard to find (beyond a JAR compiled in 2001 in docs).
+\item Hard to find (docs point to a JAR compiled in 2001).
 \item But it lives! \url{svn://svn.freehep.org/svn/freehep/trunk} has commits as recent as May 2014 ({\tt src/main}) and Oct 2015 ({\tt pom.xml}).
 \item Reads and writes ROOT files with Java reflection to create runtime objects.
+\item Compiles; unit tests require access to {\tt glast-xrootd01.slac.stanford.edu}.
+\item Haven't tested deeply (first error is trying to build bytecode with BCEL).
 \end{itemize}
 \end{block}
+\end{frame}
 
-
-
-
-
-
+\begin{frame}{Technologies}
+\begin{block}{Java Native Interface (JNI)}
+For compiling 
+\begin{itemize}
+\item Java community is strongly biased against. (The equivalent in Python is often used.)
+\item Mysterious segmentation faults.
+\end{itemize}
+\end{block}
 \end{frame}
 
 %% No, the RIO reimplementation in JAS doesn't seem to exist anymore\ldots
