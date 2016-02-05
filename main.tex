@@ -60,15 +60,9 @@ We need an efficient and robust bridge.
 \begin{block}{}
 Pure-Java reimplementation of ROOT I/O on \url{java.freehep.org} (with {\tt TTree} and 
 \begin{itemize}
-\item Hard to find: I thought it was gone
-
-
-
-
-JAR file in user-facing documentation was compiled in 2001.
-\item Hard to find: I had been under the impression that it was gone.
-\item But it exists! I found it in \url{svn://svn.freehep.org/svn/freehep/trunk} (haven't tested yet).
-\item Uses Java reflection to create runtime objects for structures in ROOT files.
+\item Hard to find: I thought it was gone. (User-facing documentation only has a JAR, compiled in 2001.)
+\item But it lives! I found it in \url{svn://svn.freehep.org/svn/freehep/trunk} with commits as recent as Oct 2015 (last {\tt src/main} commit May 2014).
+\item Reads and writes ROOT files with Java reflection to create runtime objects.
 \end{itemize}
 \end{block}
 
