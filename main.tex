@@ -95,6 +95,9 @@ Links Java to shared libraries through standard FFI.
 \vspace{0.2 cm}
 \begin{itemize}
 \item Tested JNI (unsuccessfully) and JNA (successfully).
+\begin{itemize}
+\item Can open ROOT file and print {\tt ->ls()} from Scala.
+\end{itemize}
 \item Set up a clean build environment in Maven and Make:
 \begin{itemize}
 \item {\tt maven clean} deletes {\tt scaroot.so} file.
@@ -103,9 +106,8 @@ Links Java to shared libraries through standard FFI.
 \item Assembly puts {\tt scaroot.so} inside {\tt scaroot.jar} for self-sufficienct deployment.
 \item User doesn't need to know about {\tt scaroot.so}, but {\tt LD\_LIBRARY\_PATH} must point to ROOT shared objects.
 \end{itemize}
-\item Namespace {\tt org.dianahep}, GroupID {\tt org.diana-hep}.
+\item Namespace: {\tt org.dianahep}, GroupID: {\tt org.diana-hep}.
 \end{itemize}
 \end{frame}
-
 
 \end{document}
