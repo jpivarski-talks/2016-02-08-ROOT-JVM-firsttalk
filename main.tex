@@ -60,7 +60,7 @@ We need an efficient and robust bridge.
 \begin{block}{FreeHEP-ROOTIO}
 Pure-Java reimplementation of ROOT I/O \mbox{on \url{java.freehep.org}.\hspace{-1 cm}}
 \begin{itemize}
-\item Hard to find (docs point to a JAR compiled in 2001).
+\item Hard to find (\href{docs}{http://java.freehep.org/freehep-rootio/} point to a JAR compiled in 2001).
 \item But it lives! \url{svn://svn.freehep.org/svn/freehep/trunk} has recent commits: 2014 ({\tt src/main}) and 2015 ({\tt pom.xml}).
 \item Reads and writes ROOT files with Java reflection to create runtime objects.
 \item Compiles with unit tests removed (require access to an internal GLAST server).
@@ -71,10 +71,12 @@ Pure-Java reimplementation of ROOT I/O \mbox{on \url{java.freehep.org}.\hspace{-
 
 \begin{frame}{Technologies}
 \begin{block}{Java Native Interface (JNI)}
-For compiling 
+For compiling C/C++ code that can be used in Java programs.
 \begin{itemize}
 \item Java community is strongly biased against. (The equivalent in Python is often used.)
-\item Mysterious segmentation faults.
+\item Mismatched memory models: C/C++ memory is fixed; Java has a generational garbage collector. (Python doesn't.)
+\item Java classes have no destructors other than {\tt finalize()}, which is not guaranteed to be called.
+\item Attempted, not promising: mysterious segmentation faults.
 \end{itemize}
 \end{block}
 \end{frame}
