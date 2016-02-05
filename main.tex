@@ -37,7 +37,12 @@ Most of the big data-pipeline frameworks used in industry run on the Java Virtua
 In particular, Apache Spark is written in Scala.
 \begin{itemize}
 \item Scala is a JVM language (essentially interchangeable with Java, but more friendly for data analysis).
-\item Spark supports analyses in Scala, Java, (C)Python, and R, {\it but not C++.}
+\item Spark supports analyses in Scala, Java, (C)Python, and R.
+
+Spark communicates with Python using Py4J (sockets) and R through pipes.
+
+
+
 \end{itemize}
 \end{block}
 
