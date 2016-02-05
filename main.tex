@@ -1,0 +1,37 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \setbeamertemplate{footline}[frame number]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\title[2016-02-08-ROOT-JVM-firsttalk]{Accessing ROOT from the JVM (Java)}
+\author{Jim Pivarski}
+\date{2016-02-08}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\begin{frame}{Motivation}
+No, the RIO reimplementation in JAS doesn't seem to exist anymore\ldots
+
+Similar to motivation for PyROOT; JVM is another platform that's starting to get a lot of analysis tools (Hadoop, Spark, and many others, mostly Apache stuff related to Big Data)
+\end{frame}
+
+\end{document}
