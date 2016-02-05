@@ -10,6 +10,12 @@
   \setbeamertemplate{footline}[frame number]
 } 
 
+\hypersetup{%
+  colorlinks=true,%
+  linkbordercolor=blue,%
+  pdfborderstyle={/S/U/W 1}%
+}
+
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 
@@ -56,9 +62,14 @@ We need an efficient and robust bridge.
 \begin{frame}{Technologies}
 
 \begin{block}{}
-Pure-Java reimplementation of ROOT I/O on \url{java.freehep.org}
+Pure-Java reimplementation of ROOT I/O on \url{java.freehep.org} (with {\tt TTree} and 
 \begin{itemize}
-\item Old: JAR file in user-facing documentation was compiled in 2001.
+\item Hard to find: I thought it was gone
+
+
+
+
+JAR file in user-facing documentation was compiled in 2001.
 \item Hard to find: I had been under the impression that it was gone.
 \item But it exists! I found it in \url{svn://svn.freehep.org/svn/freehep/trunk} (haven't tested yet).
 \item Uses Java reflection to create runtime objects for structures in ROOT files.
