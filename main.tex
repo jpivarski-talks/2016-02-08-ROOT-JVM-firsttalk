@@ -56,11 +56,12 @@ We need an efficient and robust bridge.
 \begin{frame}{Technologies}
 
 \begin{block}{}
-Java Analysis Toolkit (JAS) has a pure-Java reimplementation of the ROOT file I/O, using Java reflection.
+Pure-Java reimplementation of ROOT I/O on \url{java.freehep.org}
 \begin{itemize}
-\item 
-
-
+\item Old: JAR file in user-facing documentation was compiled in 2001.
+\item Hard to find: I had been under the impression that it was gone.
+\item But it exists! I found it in \url{svn://svn.freehep.org/svn/freehep/trunk} (haven't tested yet).
+\item Uses Java reflection to create runtime objects for structures in ROOT files.
 \end{itemize}
 \end{block}
 
