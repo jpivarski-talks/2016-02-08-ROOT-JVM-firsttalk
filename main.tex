@@ -15,11 +15,11 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 
-\xdefinecolor{darkblue}{rgb}{0.1,0.1,0.7}
-
 \title[2016-02-08-ROOT-JVM-firsttalk]{Accessing ROOT from the JVM (Java/Scala)}
 \author{Jim Pivarski}
 \date{2016-02-08}
+
+\xdefinecolor{darkblue}{rgb}{0.1,0.1,0.7}
 
 \begin{document}
 
@@ -175,6 +175,7 @@ all: scaroot.cpp
 	g++ -fPIC -shared -Wl,--no-as-needed $(shell root-config --cflags --ldflags --libs) -o ../../../src/main/resources/native/scaroot.so scaroot.cpp
 \end{verbatim}
 
+\vfill
 \hspace{-0.83 cm} \textcolor{darkblue}{\Large {\tt pom.xml} fragment}
 \begin{verbatim}
 ...
