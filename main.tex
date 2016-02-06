@@ -173,7 +173,10 @@ package scaroot {
 \small
 \begin{verbatim}
 all: scaroot.cpp
-	g++ -fPIC -shared -Wl,--no-as-needed $(shell root-config --cflags --ldflags --libs) -o ../../../src/main/resources/native/scaroot.so scaroot.cpp
+    g++ -fPIC -shared -Wl,--no-as-needed \
+        $(shell root-config --cflags --ldflags --libs) \
+        -o ../../../src/main/resources/native/scaroot.so \
+        scaroot.cpp
 \end{verbatim}
 
 \vfill
@@ -183,10 +186,8 @@ all: scaroot.cpp
 <plugin>
   <groupId>org.codehaus.mojo</groupId>
   <artifactId>exec-maven-plugin</artifactId>
-  <version>1.4.0</version>
   <executions>
     <execution>
-      <id>Build scaroot.cpp</id>
       <phase>generate-sources</phase>
       <goals>
         <goal>exec</goal>
