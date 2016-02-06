@@ -149,10 +149,12 @@ int64_t new_TFile(char *fileName) {
   TFile *tfile = new TFile(fileName);
   return (int64_t)tfile;
 }
+
 void delete_TFile(int64_t pointer) {
   TFile *tfile = (TFile*)pointer;
   delete tfile;
 }
+
 void TFile_ls(int64_t pointer) {
   TFile *tfile = (TFile*)pointer;
   tfile->ls();
@@ -190,17 +192,17 @@ package scaroot {
 
 \begin{frame}[fragile]{\tt src/main/cpp/Makefile}
 \small
-\begin{verbatim}
+\begin{lstlisting}[language=make]
 all: scaroot.cpp
     g++ -fPIC -shared -Wl,--no-as-needed \
         $(shell root-config --cflags --ldflags --libs) \
         -o ../../../src/main/resources/native/scaroot.so \
         scaroot.cpp
-\end{verbatim}
+\end{lstlisting}
 
 \vfill
 \hspace{-0.83 cm} \textcolor{darkblue}{\Large {\tt pom.xml} fragment}
-\begin{verbatim}
+\begin{lstlisting}[language=XML]
 ...
 <plugin>
   <groupId>org.codehaus.mojo</groupId>
@@ -214,7 +216,7 @@ all: scaroot.cpp
         <executable>make</executable>
       </configuration>
 ...
-\end{verbatim}
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{Directory structure}
