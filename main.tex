@@ -111,8 +111,9 @@ Links Java to shared libraries through \mbox{Foreign Function Interface (FFI).\h
 \begin{itemize}
 \item {\tt mvn install} command runs {\tt make} to build C++ first, then Scala (and any Java, if needed).
 \item C-style symbol names ({\tt extern "C"}) in {\tt scaroot.so}.
-\item JAR-builder puts {\tt scaroot.so} inside {\tt scaroot.jar} for self-sufficienct deployment.
-\item User doesn't need to know about {\tt scaroot.so}, but {\tt LD\_LIBRARY\_PATH} must point to ROOT shared objects.
+\item {\tt scaroot.so} enclosed within {\tt scaroot.jar}.
+\item User submits only {\tt scaroot.jar} to the Spark cluster, but {\tt LD\_LIBRARY\_PATH} must be pointing to ROOT on the cluster.
+\item Perhaps I can encapsulate a whole version of ROOT in the {\tt scaroot.jar}, so the whole thing gets sent with the workflow.
 \end{itemize}
 \item Namespace: {\tt org.dianahep}, GroupID: {\tt org.diana-hep}.
 \end{itemize}
