@@ -157,7 +157,7 @@ package scaroot {
   }
   object Main {
     def main(args: Array[String]) {
-      val pointer = SharedObject.new_TFile("/opt/root/test/Event.root")
+      val pointer = SharedObject.new_TFile("Event.root")
       println(s"pointer value $pointer")
       SharedObject.TFile_ls(pointer)
       println(s"see a listing?")
