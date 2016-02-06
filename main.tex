@@ -28,7 +28,14 @@
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 
 \lstset{ %
-  basicstyle=\ttfamily\scriptsize        % size of fonts used for the code
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\ttfamily\scriptsize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
 }
 
 \begin{document}
@@ -157,7 +164,7 @@ void TFile_ls(int64_t pointer) {
 \end{frame}
 
 \begin{frame}[fragile]{\tt src/main/scala/org/dianahep/scaroot/Main.scala}
-\begin{lstlisting}[language=scala]
+\begin{lstlisting}[language=java]
 package org.dianahep
 
 import com.sun.jna._
