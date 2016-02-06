@@ -16,6 +16,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{dirtree}
 \usepackage{listings}
+\usepackage{courier}
 
 \title[2016-02-08-ROOT-JVM-firsttalk]{Accessing ROOT from the JVM (Java/Scala)}
 \author{Jim Pivarski}
@@ -27,14 +28,7 @@
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 
 \lstset{ %
-  backgroundcolor=\color{white},   % choose the background color
-  basicstyle=\ttfamily\scriptsize,        % size of fonts used for the code
-  breaklines=true,                 % automatic line breaking only at whitespace
-  captionpos=b,                    % sets the caption-position to bottom
-  commentstyle=\color{mygreen},    % comment style
-  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  keywordstyle=\color{blue},       % keyword style
-  stringstyle=\color{mymauve},     % string literal style
+  basicstyle=\ttfamily\scriptsize        % size of fonts used for the code
 }
 
 \begin{document}
@@ -192,7 +186,7 @@ package scaroot {
 
 \begin{frame}[fragile]{\tt src/main/cpp/Makefile}
 \small
-\begin{lstlisting}[language=make]
+\begin{lstlisting}[language=sh]
 all: scaroot.cpp
     g++ -fPIC -shared -Wl,--no-as-needed \
         $(shell root-config --cflags --ldflags --libs) \
