@@ -109,7 +109,6 @@ Links Java to shared libraries through \mbox{Foreign Function Interface (FFI).\h
 \end{itemize}
 \item Set up a clean build environment with Maven and Make:
 \begin{itemize}
-\item {\tt maven clean} deletes {\tt scaroot.so} file.
 \item {\tt maven package} runs {\tt make} to build C++ first, then Scala (and any Java, if needed).
 \item C-style symbol names ({\tt extern "C"}) in shared object.
 \item Assembly puts {\tt scaroot.so} inside {\tt scaroot.jar} for self-sufficienct deployment.
