@@ -99,7 +99,7 @@ For compiling C/C++ code that can be used in Java programs.
 \begin{itemize}
 \item C/C++ memory has fixed locations; Java has a generational garbage collector. (Python has fixed memory, like C/C++.)
 \item Java classes have no destructors other than {\tt finalize()}, which is not guaranteed to be called (like Python {\tt \_\_del\_\_}).
-\item Community recommends {\tt try-finally} to avoid memory leaks more often than {\tt finalize()}.
+\item {\tt try-finally} is usually recommended to avoid memory leaks.
 \end{itemize}
 \item Attempted, not promising: mysterious segmentation faults.
 \end{itemize}
@@ -109,7 +109,7 @@ For compiling C/C++ code that can be used in Java programs.
 Links Java code to pre-built shared libraries ({\tt .so} files).
 \begin{itemize}
 \item Same issues as above except the interface is cleaner.
-\item Implicit data transformation overhead: ``100~$\mu$s''?
+\item Implicit data transformation overhead: ``100~$\mu$s per call''
 \item Promising: no myserious segmentation faults.
 \end{itemize}
 \end{block}
