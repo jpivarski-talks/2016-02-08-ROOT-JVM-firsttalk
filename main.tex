@@ -83,7 +83,7 @@ For compiling C/C++ code that can be used in Java programs.
 \begin{itemize}
 \item Mismatched memory models: C/C++ memory is fixed; Java has a generational garbage collector. (Python doesn't.)
 \item Java classes have no destructors other than {\tt finalize()}, which is not guaranteed to be called.
-\item Strongly recommended to avoid memory leaks with {\tt try-finally}.
+\item Strongly recommended to avoid memory leaks with {\tt try-finally}, not {\tt finalize()}.
 \end{itemize}
 \item Attempted, not promising: mysterious segmentation faults.
 \end{itemize}
