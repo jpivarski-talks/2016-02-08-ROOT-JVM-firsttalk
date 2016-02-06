@@ -147,7 +147,6 @@ void TFile_ls(int64_t pointer) {
 \small
 \begin{verbatim}
 package org.dianahep
-
 import com.sun.jna._
 
 package scaroot {
@@ -157,7 +156,6 @@ package scaroot {
     @native def delete_TFile(pointer: Long): Unit
     @native def TFile_ls(pointer: Long): Unit
   }
-
   object Main {
     def main(args: Array[String]) {
       val pointer = SharedObject.new_TFile("/opt/root/test/Event.root")
