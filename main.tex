@@ -172,7 +172,7 @@ import com.sun.jna._
 
 package scaroot {
   object SharedObject extends Library {
-    Native.register("/resources/native/scaroot.so")
+    Native.register("/resources/native/scaroot.so")  // in JAR
     @native def new_TFile(fileName: String): Long
     @native def delete_TFile(pointer: Long): Unit
     @native def TFile_ls(pointer: Long): Unit
