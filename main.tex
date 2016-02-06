@@ -15,12 +15,27 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{dirtree}
+\usepackage{listings}
 
 \title[2016-02-08-ROOT-JVM-firsttalk]{Accessing ROOT from the JVM (Java/Scala)}
 \author{Jim Pivarski}
 \date{2016-02-08}
 
 \xdefinecolor{darkblue}{rgb}{0.1,0.1,0.7}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
 
 \begin{document}
 
@@ -121,7 +136,7 @@ Links Java to shared libraries through \mbox{Foreign Function Interface (FFI).\h
 
 \begin{frame}[fragile]{src/main/cpp/scaroot.cpp}
 \small
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <stdint.h>
 #include "TFile.h"
 
@@ -141,7 +156,7 @@ void TFile_ls(int64_t pointer) {
   TFile *tfile = (TFile*)pointer;
   tfile->ls();
 }
-\end{verbatim}
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{\tt src/main/scala/org/dianahep/scaroot/Main.scala}
