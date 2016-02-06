@@ -135,13 +135,14 @@ Links Java to shared libraries through \mbox{Foreign Function Interface (FFI).\h
 \end{frame}
 
 \begin{frame}[fragile]{src/main/cpp/scaroot.cpp}
-\small
 \begin{lstlisting}[language=c++]
 #include <stdint.h>
 #include "TFile.h"
 
 extern "C" {
-  ...
+  int64_t new_TFile(char *fileName);
+  void delete_TFile(int64_t pointer);
+  void TFile_ls(int64_t pointer);
 }
 
 int64_t new_TFile(char *fileName) {
@@ -160,10 +161,11 @@ void TFile_ls(int64_t pointer) {
 \end{frame}
 
 \begin{frame}[fragile]{\tt src/main/scala/org/dianahep/scaroot/Main.scala}
-\small
-\begin{verbatim}
+\begin{lstlisting}[language=scala]
 package org.dianahep
+
 import com.sun.jna._
+
 package scaroot {
   object SharedObject extends Library {
     Native.register("/resources/native/scaroot.so")
@@ -171,6 +173,7 @@ package scaroot {
     @native def delete_TFile(pointer: Long): Unit
     @native def TFile_ls(pointer: Long): Unit
   }
+
   object Main {
     def main(args: Array[String]) {
       val pointer = SharedObject.new_TFile("Event.root")
@@ -182,7 +185,7 @@ package scaroot {
     }
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{\tt src/main/cpp/Makefile}
