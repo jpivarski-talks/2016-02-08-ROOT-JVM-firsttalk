@@ -171,7 +171,7 @@ package org.dianahep
 import com.sun.jna._
 
 package scaroot {
-  object SharedObject extends Library {
+  object ROOTLibrary extends Library {
     Native.register("/resources/native/scaroot.so")  // in JAR
     @native def new_TFile(fileName: String): Long
     @native def delete_TFile(pointer: Long): Unit
@@ -180,11 +180,11 @@ package scaroot {
 
   object Main {
     def main(args: Array[String]) {
-      val pointer = SharedObject.new_TFile("Event.root")
+      val pointer = ROOTLibrary.new_TFile("Event.root")
       println(s"pointer value $pointer")
-      SharedObject.TFile_ls(pointer)
+      ROOTLibrary.TFile_ls(pointer)
       println(s"see a listing?")
-      SharedObject.delete_TFile(pointer)
+      ROOTLibrary.delete_TFile(pointer)
       println(s"still here?")
     }
   }
